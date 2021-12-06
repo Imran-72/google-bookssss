@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <>
       <div>
-        <div>
+        <div className="d-flex justify-content-between">
           <div>Logo</div>
           <div>
             <input />
