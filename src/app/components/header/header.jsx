@@ -1,23 +1,21 @@
 import React from "react";
-import { Button } from "./Button";
+import { Title } from "../title";
 import { Input } from "./Input";
+import { SearchBtn } from "./searchButton";
 
 const Header = () => {
   return (
     <>
       <div className="main-header">
-        {/* <div className="d-flex justify-content-between"> */}
-        {/* <div>Logo</div> */}
+        <div className="filter"></div>
+        <Title>Google Books</Title>
         <div className="d-flex justify-content-center input-wrapper">
-          <div style={{ width: "900px" }} className="d-flex ">
+          <div style={{ width: "800px" }} className="d-flex ">
             <Input placeholder="Ввидите название книги" />
-            <Button>поиск</Button>
+            <SearchBtn grey>поиск</SearchBtn>
           </div>
         </div>
-        {/* <div>вход/регистрация</div>
-        <div>корзина</div> */}
       </div>
-      {/* </div> */}
     </>
   );
 };
