@@ -2,48 +2,30 @@ import React, { useState } from "react";
 import { Title } from "../../styledComponents/title";
 import { Input } from "../../styledComponents/Input";
 import { SearchBtn } from "../../styledComponents/searchButton";
+import { Filter } from "../../styledComponents/filter";
+import {
+  InputContentWrap,
+  InputWrapper,
+} from "../../styledComponents/inputWrapper";
 
-const Header = () => {
-  const [query, setQuery] = useState("");
-  const [books, setBooks] = useState([]);
-
-  console.log(books);
-  const handleInputChange = ({ target }) => {
-    setQuery((prevState) => (prevState, target.value));
-  };
-
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=40&startIndex=1`
-      );
-      if (!response.ok) {
-        throw new Error("Ошибка запроса");
-      }
-      const data = await response.json();
-      setBooks(data.items);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+const Header = ({ onSubmit, onInputChange, query }) => {
   return (
     <>
       <div className="main-header">
-        <div className="filter"></div>
+        {/* <Filter /> */}
         <Title>Google Books</Title>
-        <div className="d-flex justify-content-center input-wrapper">
-          <div style={{ width: "800px" }} className="d-flex ">
+        <InputWrapper>
+          <InputContentWrap>
             <Input
               placeholder="Ввидите название книги"
               value={query}
-              onChange={handleInputChange}
+              onChange={onInputChange}
             />
-            <SearchBtn grey onClick={handleSubmit}>
+            <SearchBtn grey onClick={onSubmit}>
               поиск
             </SearchBtn>
-          </div>
-        </div>
+          </InputContentWrap>
+        </InputWrapper>
       </div>
     </>
   );
