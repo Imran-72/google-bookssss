@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Title } from "../../styledComponents/title";
 import { Input } from "../../styledComponents/Input";
 import { SearchBtn } from "../../styledComponents/searchButton";
@@ -8,7 +8,7 @@ import {
   InputWrapper,
 } from "../../styledComponents/inputWrapper";
 
-const Header = ({ onSubmit, onInputChange, query }) => {
+const Header = ({ onSubmit, onInputChange, query, referense }) => {
   return (
     <>
       <div className="main-header">
@@ -20,6 +20,7 @@ const Header = ({ onSubmit, onInputChange, query }) => {
               placeholder="Ввидите название книги"
               value={query}
               onChange={onInputChange}
+              ref={referense}
             />
             <SearchBtn grey onClick={onSubmit}>
               поиск
