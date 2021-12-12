@@ -1,31 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { createQuery, getBooks } from "../redux/actions";
 import BookCard from "./components/bookCard";
 import Header from "./components/header/header";
 import { Container } from "./styledComponents/container";
 
 const App = () => {
-  const [query, setQuery] = useState("");
-  const [books, setBooks] = useState([]);
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.booksRed.books);
+  const query = useSelector((state) => state.queryRed.query);
 
-  console.log(books);
   const handleInputChange = ({ target }) => {
-    setQuery((prevState) => (prevState, target.value));
+    dispatch(createQuery(target.value));
   };
 
-  const handleSubmit = async () => {
-    try {
-      const response = await fetch(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=10&startIndex=1`
-      );
-      if (!response.ok) {
-        throw new Error("Ошибка запроса");
-      }
-      const data = await response.json();
-      setBooks(data.items);
-    } catch (e) {
-      console.log(e);
-    }
+  const handleSubmit = () => {
+    dispatch(getBooks(query));
   };
+
   return (
     <>
       <Header
@@ -34,7 +27,7 @@ const App = () => {
         query={query}
       />
       <Container>
-        <BookCard books={books} />
+        <BookCard items={books} />
       </Container>
     </>
   );
