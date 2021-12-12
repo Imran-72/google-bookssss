@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
-import App from "./app/app";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import "./index.css";
+import App from "./app/components/app";
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,5 +12,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-
-reportWebVitals();

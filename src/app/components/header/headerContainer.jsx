@@ -1,14 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { createQuery, getBooks } from "../redux/actions";
-import BookCard from "./components/bookCard";
-import Header from "./components/header/header";
-import { Container } from "./styledComponents/container";
+import { createQuery, getBooks } from "../../../redux/actions";
+import Header from "./header";
 
-const App = () => {
+const HeaderContainer = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.booksRed.books);
   const query = useSelector((state) => state.queryRed.query);
 
   const handleInputChange = ({ target }) => {
@@ -26,11 +23,8 @@ const App = () => {
         onInputChange={handleInputChange}
         query={query}
       />
-      <Container>
-        <BookCard items={books} />
-      </Container>
     </>
   );
 };
 
-export default App;
+export default HeaderContainer;
