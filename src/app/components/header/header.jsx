@@ -7,12 +7,13 @@ import {
   InputContentWrap,
   InputWrapper,
 } from "../../styledComponents/inputWrapper";
+import { MainHeader } from "../../styledComponents/mainHeader";
 
 const Header = ({ onSubmit, onInputChange, query, referense }) => {
   return (
     <>
-      <div className="main-header">
-        {/* <Filter /> */}
+      <MainHeader>
+        {/* <Filter/> */}
         <Title>Google Books</Title>
         <InputWrapper>
           <InputContentWrap>
@@ -27,7 +28,7 @@ const Header = ({ onSubmit, onInputChange, query, referense }) => {
             </SearchBtn>
           </InputContentWrap>
         </InputWrapper>
-      </div>
+      </MainHeader>
     </>
   );
 };

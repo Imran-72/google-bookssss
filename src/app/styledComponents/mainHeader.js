@@ -1,13 +1,6 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+import styled from "styled-components";
 
-/* .main-header {
+export const MainHeader = styled.div`
   background: url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1453&q=80);
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,4 +9,4 @@ body {
   height: 80vh;
   position: relative;
   background-attachment: fixed;
-} */
+`;

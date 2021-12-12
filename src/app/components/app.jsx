@@ -5,8 +5,10 @@ import HeaderContainer from "./header/headerContainer";
 const App = () => {
   return (
     <>
-      <HeaderContainer />
-      <BookCardContainer />
+      <div className="w-100 h-100">
+        <HeaderContainer />
+        <BookCardContainer />
+      </div>
     </>
   );
 };

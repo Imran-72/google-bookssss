@@ -1,8 +1,7 @@
-import React from "react";
-import { useRef } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { createQuery, getBooks } from "../../../redux/actions";
+import { Filter } from "../../styledComponents/filter";
 import Header from "./header";
 
 const HeaderContainer = () => {
