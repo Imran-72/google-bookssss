@@ -15,7 +15,6 @@ const BookCard = ({ thumbnail }) => {
           <CardBody>
             <CardTitle>Naruto vol 23</CardTitle>
             <SearchBtn>More info</SearchBtn>
-            <SearchBtn>More info</SearchBtn>
           </CardBody>
         </ImgContentWrap>
       </ImgWrap>
